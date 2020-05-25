@@ -44,24 +44,27 @@
 
         //  24/7/19 - 6x6 table of text boxes with some initial test values
         function LoadGrid(G) {
-            var Row = 6;    //set the number of rows
-            var Col = 6;    //set the number of columns
             var GridCol = [];
-            var Grid = [];
+			var arr2D = ""; //24/5 changing the array view
+            Grid = [];
 
-            for (let j = 0; j < Row; j++) { //Row loop - like the "y" coordinates
-                for (let i = 0; i < Col; i++) { //Column loop - like the "x" coordinates
-                    GridCol.push(G[j * Col + i]); // load the column elements into this temporary array
+            for (let j = 0; j < GridSize; j++) { //Row loop - like the "y" coordinates
+                for (let i = 0; i < GridSize; i++) { //Column loop - like the "x" coordinates
+                    GridCol.push(G[j * GridSize + i]); // load the column elements into this temporary array
                 }
+				arr2D = arr2D + "Grid[" + j + "] = [" + GridCol + "]" + "\n";
                 Grid.push(GridCol); // push a column array for each row
                 GridCol = []; // clear this array ready for the next row
             }
-            document.getElementById('arrayView2D').value = Grid;
-            document.getElementById('arrayViewCell').value = Grid[4][3]; //Row 5, Column 4
+            document.getElementById('arrayView2D').value = arr2D;
+            document.getElementById('arrayViewCell').value = Grid[4][3]; //Row 1, Column 4
+			DisplayGrid(Grid);
+		}
+		function DisplayGrid(G2D) {
 
-            for (let j = 0; j < Row; j++) { //Row loop - like the "y" coordinates
-                for (let i = 0; i < Col; i++) { //Column loop - like the "x" coordinates
-                    document.getElementById('B' + (i + 1) + (j + 1)).value = G[j * Col + i]; // Nested loops
+            for (let j = 0; j < GridSize; j++) { //Row loop - like the "y" coordinates
+                for (let i = 0; i < GridSize; i++) { //Column loop - like the "x" coordinates
+                    document.getElementById('B' + (i + 1) + (j + 1)).value = G2D[j][i]; //Nested loops
                 }
             }
         }
