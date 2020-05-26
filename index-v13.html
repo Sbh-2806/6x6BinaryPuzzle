@@ -41,13 +41,14 @@
         var G12 = [0, null, null, null, null, null, null, 1, 1, null, null, null, null, null, 1, null, null, null, null, null, null, 0, null, null, 0, null, null, 1, null, null, null, null, null, null, null, null];
         var G13 = [null, null, null, 1, null, null, null, null, null, null, null, 0, null, null, null, null, 0, 0, null, null, null, null, 1, null, 1, null, null, null, null, null, null, 0, null, 0, null, 0];
         var GT = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36];
+	var Row = 0;
+	var Col = 0;
 
         //  24/7/19 - 6x6 table of text boxes with some initial test values
 	function LoadGrid(G) {
        	    var Row = 6;    //set the number of rows
             var Col = 6;    //set the number of columns
             var GridCol = [];
-            var Grid = [];
 
             for (let j = 0; j < Row; j++) { //Row loop - like the "y" coordinates
                 for (let i = 0; i < Col; i++) { //Column loop - like the "x" coordinates
