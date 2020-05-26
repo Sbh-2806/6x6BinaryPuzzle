@@ -77,6 +77,7 @@
               gridcol = [];
             }
            document.getElementById('arrayView2D').value = arr2d;
+	   DisplayGrid(Grid);
 	  }
 
 	
@@ -89,12 +90,14 @@
                 window.alert('Main "BinaryPuzzleSolver" - Solved = ' + Solved + '. Loop # ' + i + '.');
                 i++;
             }
+	    DisplayGrid(Grid);
         }
         function SolvePuzzle() {
             if (G2D[0][1] == 1) {   //row 1, col 2
                 window.alert('Sub "SolvePuzzle" TEST MSG ONLY - 1 in row 1 col 2 - "solved". ');
                 return true;
 	    }
+	    DisplayGrid(Grid);
         }
         function SolveRowPairs() { // See pseudocode in Q22f for the row part here
             GridSize = 6;
@@ -110,10 +113,12 @@
                     }
                 }
             }
+	    DisplayGrid(Grid);
 	}
         function SolveNumberPairs() {
             SolveRowPairs();
             SolveColPairs();
+	    DisplayGrid(Grid);
         }
         function SolveNumberTrios() {
             GridSize = 6;
@@ -130,6 +135,7 @@
                         Grid[Row + 1][Col] = (1 - Grid[Row][Col]);
                     }
                 }
+		DisplayGrid(Grid);
             }
 
         function CompleteRowsCols() {
@@ -170,6 +176,7 @@
                 }
                 col1tot = 0;
                 col0tot = 0;
+		DisplayGrid(Grid);
             }
 
     </script>
