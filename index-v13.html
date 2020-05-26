@@ -94,6 +94,7 @@
             if (G2D[0][1] == 1) {   //row 1, col 2
                 window.alert('Sub "SolvePuzzle" TEST MSG ONLY - 1 in row 1 col 2 - "solved". ');
                 return true;
+	    }
         }
         function SolveRowPairs() { // See pseudocode in Q22f for the row part here
             GridSize = 6;
@@ -109,6 +110,7 @@
                     }
                 }
             }
+	}
         function SolveNumberPairs() {
             SolveRowPairs();
             SolveColPairs();
@@ -129,8 +131,7 @@
                     }
                 }
             }
-            DisplayGrid(Grid);
-        }
+
         function CompleteRowsCols() {
             let row1tot = 0;
             let row0tot = 0;
@@ -170,8 +171,6 @@
                 col1tot = 0;
                 col0tot = 0;
             }
-            DisplayGrid(Grid);
-        }
 
     </script>
 </head>
