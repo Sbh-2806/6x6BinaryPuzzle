@@ -44,7 +44,8 @@
 	var Grid = [];
 	var Row = 6;
 	var Col = 6;
-        function LoadGrid(G) {                    
+	    
+        function GenerateGrid(G) {                    
 	    var GridCol = [];
             var arr2D = "";
             for (let j = 0; j < Row; j++){
@@ -174,7 +175,7 @@
 
     </script>
 </head>
-<body onload="LoadGrid(G01)">
+<body onload="GenerateGrid(G01)">
     <!--Parameter for initial load can be changed manually-->
     <!--3/8/19 "LoadGrid()" now changed to 2 nested loops -->
     <form id="input">
